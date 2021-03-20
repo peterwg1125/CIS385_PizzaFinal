@@ -3,24 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <title>Checkout</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"/>
 </head>
 <body>
-    <div>Items in your cart:
+<div class="navigation-container">
+        <div class="navigation-content"></div>
+    </div>
+    <div class="introText center">
+        Items in your cart:
     <ul>
         {% for item in cart %}
         <li>{{ item}}</li>
         {% endfor %}
     </ul>
-    Your total is: {{ total }}
+        <p>Your total is: {{ total }}</p>
     </div>
-    <div>
+    <div class="center">
         <form action="/menu" method="get">
-        <button type="submit" value="go to menu">Add more items</button>
+            <button class="button" type="submit" value="go to menu"><span>Add more items</span></button>
         </form>
     </div>
-    <div>
+    <div class="center">
         <form action="/userInfo" method="get">
-        <button type="submit" value="go to details">Check Out</button>
+            <button class="button" type="submit" value="go to details"><span>Check Out</span></button>
         </form>
     </div>
 </body>

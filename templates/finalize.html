@@ -2,9 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Order Confirmed</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"/>
 </head>
 <body>
-
+<div class="navigation-container">
+        <div class="navigation-content"></div>
+    </div>
+<div class="introText center">
+    <p>Your pickup order #{{ order_id }} has been placed successfully!</p>
+    <p>It will be ready for pickup in about 20-30 minutes.</p>
+    <p>Thank you for choosing Peter's Pizzeria!</p>
+</div>
 </body>
 </html>

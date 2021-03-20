@@ -9,6 +9,7 @@ import random
 
 app = Flask(__name__)
 app.secret_key = "sEcReTkEy"
+app.static_folder = 'static'
 api = Api(app)
 
 
@@ -154,7 +155,7 @@ def store_data():
             db.session.commit()
             extra_id = None
             menu_id = None
-    return render_template('finalize.html')
+    return render_template('finalize.html', order_id=order_id)
 
 
 if __name__ == '__main__':

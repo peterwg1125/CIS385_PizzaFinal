@@ -3,39 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <title>Menu and dropdown</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"/>
 </head>
 <body>
+<div class="navigation-container">
+        <div class="navigation-content"></div>
+    </div>
 <form action="/reviewOrder" method="POST">
-<div>
-Select Menu Item:
+<div class="introText center">
+        <p>Select Menu Item:
     <select id=MenuItem name= main_item method="GET" action="/menu">
     {% for test in test1 %}
     <option value= "{{test}}" SELECTED>{{test}}</option>"
     {% endfor %}
     </select>
+        </p>
+        <p>Select Extra Items:
+        <select id =ExtraItem name= extra_item method="GET" action="/menu">
+        {% for test in test2 %}
+        <option value= "{{test}}" SELECTED>{{test}}</option>"
+        {% endfor %}
+        </select>
+        </p>
 </div>
-<div>
-    Select Extra Items:
-    <select id =ExtraItem name= extra_item method="GET" action="/menu">
-    {% for test in test2 %}
-    <option value= "{{test}}" SELECTED>{{test}}</option>"
-    {% endfor %}
-    </select>
-</div>
-<div>
-    <button type = "submit" name = "submit">Review Your Order</button>
+<div class="center">
+    <button class="button" name = "submit"><span>Review Your Order</span></button>
     </div>
     </form>
 
-<script type="text/javascript">
-
-
-    function newOrder(){
-
-
-    }
-
-
-</script>
 </body>
 </html>

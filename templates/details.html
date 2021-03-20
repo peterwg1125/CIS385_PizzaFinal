@@ -3,8 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>User Information</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"/>
 </head>
 <body>
+<div class="navigation-container">
+        <div class="navigation-content"></div>
+    </div>
+<div class="introText center">
+    <p>Enter information for your pickup order!</p>
     <form action="/finalized", method="post">
         <label for="fname">First name:</label>
         <input type="text" id="fname" name="fname"><br><br>
@@ -16,7 +22,8 @@
         <input type="text" id="street" name="street"><br><br>
         <label for="city">City:</label>
         <input type="text" id="city" name="city"><br><br>
-        <input type="submit" value="Submit">
+        <button class="button" name = "submit"><span>Submit</span></button>
     </form>
+</div>
 </body>
 </html>
