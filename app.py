@@ -75,8 +75,13 @@ def testsubmit():
     return render_template('checkout.html', cart=cart, total=total_form)
 
 
-@app.route('/confirmOrder', methods=['POST'])
-def finalize_order():
+@app.route('/userInfo', methods=['POST'])
+def show_user_info():
+    return render_template('details.html', total=total_form)
+
+
+@app.route('/finalized', methods=['POST'])
+def store_data():
 
     return render_template('finalize.html')
 
