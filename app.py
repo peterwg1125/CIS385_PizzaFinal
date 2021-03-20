@@ -1,12 +1,13 @@
 from typing import Any, Union
 
-from flask import Flask, request, make_response
+from flask import Flask, request, session
 from flask import render_template
 from flask_restful import Resource, Api
 from flask_sqlalchemy import SQLAlchemy
 
 
 app = Flask(__name__)
+app.secret_key = "sEcReTkEy"
 api = Api(app)
 
 
@@ -71,13 +72,13 @@ def testsubmit():
         if q is not None:
             extra_cost = float(q.ExtraCost)
             total = total + extra_cost
-    total_form = "${:,.2f}".format(total)
-    return render_template('checkout.html', cart=cart, total=total_form)
+    session['total_form'] = "${:,.2f}".format(total)
+    return render_template('checkout.html', cart=cart, total=session['total_form'])
 
 
 @app.route('/userInfo', methods=['POST'])
 def show_user_info():
-    return render_template('details.html', total=total_form)
+    return render_template('details.html', total=session['total_form'])
 
 
 @app.route('/finalized', methods=['POST'])
