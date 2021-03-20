@@ -1,11 +1,1 @@
-pip~=21.0.1
-pytz~=2021.1
-Jinja2~=2.11.3
-Werkzeug~=1.0.1
-itsdangerous~=1.1.0
-click~=7.1.2
-MarkupSafe~=1.1.1
-aniso8601~=9.0.1
-setuptools~=54.1.1
 Flask~=1.1.2
-six~=1.15.0
