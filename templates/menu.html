@@ -2,15 +2,35 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Menu</title>
+    <title>Menu and dropdown</title>
 </head>
 <body>
-    Success!
+<form action="/reviewOrder" method="POST">
+<div>
+Select Menu Item:
+    <select id=MenuItem name= main_item method="GET" action="/menu">
+    {% for test in test1 %}
+    <option value= "{{test}}" SELECTED>{{test}}</option>"
+    {% endfor %}
+    </select>
+</div>
+<div>
+    Select Extra Items:
+    <select id =ExtraItem name= extra_item method="GET" action="/menu">
+    {% for test in test2 %}
+    <option value= "{{test}}" SELECTED>{{test}}</option>"
+    {% endfor %}
+    </select>
+</div>
+<div>
+    <button type = "submit" name = "submit">Review Your Order</button>
+    </div>
+    </form>
 
 <script type="text/javascript">
 
 
-    function addPizza(){
+    function newOrder(){
 
 
     }

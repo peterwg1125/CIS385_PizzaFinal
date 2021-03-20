@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Checkout</title>
+</head>
+<body>
+    <div>Items in your cart:
+    <ul>
+        {% for item in cart %}
+        <li>{{ item}}</li>
+        {% endfor %}
+    </ul>
+    Your total is: {{ total }}
+    </div>
+    <div>
+        Would you like to add more?
+        <form action="/menu" method="get">
+        <button type="submit" value="go to menu">Go to menu</button>
+        </form>
+    </div>
+</body>
+</html>
